@@ -1,0 +1,34 @@
+.month-grid {
+
+    .day-headers {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .day-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% / 7);
+            height: 50px
+        }
+
+
+
+    }
+
+    .days {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .day {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% / 7);
+            height: 60px;
+        }
+    }
+}
