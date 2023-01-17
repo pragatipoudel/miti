@@ -19,7 +19,7 @@ const monthNames = [
 function Title({ year, month }) {
     return (
         <div>
-            {monthNames[month - 1]}
+            {monthNames[month]}
             {' '}
             {year}
         </div>

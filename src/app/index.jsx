@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MonthView from '../components/month-view';
 import NepaliDate from '../nepali-date';
 import './styles.scss';
 
 function App() {
-    const nd = new NepaliDate(2079, 8, 20);
-    console.log(nd.toEnglishDate());
-    console.log(NepaliDate.fromEnglishDate(nd.toEnglishDate()));
-    // console.log(NepaliDate.fromEnglishDate(new Date()));
-
+    const currentEng = new Date();
+    const nepDate = NepaliDate.fromEnglishDate(currentEng);
+    const [year, setYear] = useState(nepDate.year);
+    const [month, setMonth] = useState(nepDate.month);
     return (
         <div className="app">
-            <MonthView />
+            <MonthView year={year} month={month} setYear={setYear} setMonth={setMonth} />
         </div>
     );
 }
