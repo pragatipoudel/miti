@@ -1,8 +1,9 @@
-import nepaliDates from "./data";
+import nepaliDates from './data';
 
 class NepaliDate {
-    static startNepaliDate = new NepaliDate(2000, 0, 1)
-    static startEnglishDate = new Date(1943, 3, 14)
+    static startNepaliDate = new NepaliDate(2000, 0, 1);
+
+    static startEnglishDate = new Date(1943, 3, 14);
 
     constructor(year, month, date) {
         this.year = year;
@@ -13,23 +14,23 @@ class NepaliDate {
     toEnglishDate() {
         const currentYear = this.year - 2000;
         let sum = 0;
-        for (let i = 0; i < currentYear; i++) {
-            for (let j = 0; j < 12; j++) {
+        for (let i = 0; i < currentYear; i += 1) {
+            for (let j = 0; j < 12; j += 1) {
                 sum += nepaliDates[i][j];
             }
         }
 
-        for (let i = 0; i < this.month; i++) {
+        for (let i = 0; i < this.month; i += 1) {
             sum += nepaliDates[currentYear][i];
         }
 
         sum += this.date;
 
         const englishDate = new Date(NepaliDate.startEnglishDate);
-        englishDate.setDate(englishDate.getDate() + sum - 1)
+        englishDate.setDate(englishDate.getDate() + sum - 1);
 
         return englishDate;
     }
 }
 
-export default NepaliDate
+export default NepaliDate;
