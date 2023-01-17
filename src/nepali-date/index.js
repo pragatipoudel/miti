@@ -1,3 +1,4 @@
+import moment from 'moment';
 import nepaliDates from './data';
 
 class NepaliDate {
@@ -30,6 +31,27 @@ class NepaliDate {
         englishDate.setDate(englishDate.getDate() + sum - 1);
 
         return englishDate;
+    }
+
+    static fromEnglishDate(englishDate) {
+        const start = moment(this.startEnglishDate);
+        const end = moment(englishDate);
+        let days = end.diff(start, 'days');
+
+        for (let y = 0; y < nepaliDates.length; y += 1) {
+            for (let m = 0; m < 12; m += 1) {
+                if (days > nepaliDates[y][m]) {
+                    days -= nepaliDates[y][m];
+                } else {
+                    const year = y + 2000;
+                    const month = m;
+                    const date = days + 1;
+                    return new NepaliDate(year, month, date);
+                }
+            }
+        }
+
+        throw new Error('Not supported');
     }
 }
 
