@@ -1,6 +1,11 @@
 .month-view {
     width: 60vw;
+    max-width: 785px;
+    min-width: 455px;
     background-color: white;
     display: flex;
     flex-direction: column;
+    box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.5);
+    overflow: hidden;
+    border-radius: 8px;
 }

@@ -1,4 +1,5 @@
 .month-grid {
+    padding: 8px 10px 16px 10px;
 
     .day-headers {
         display: flex;
@@ -31,12 +32,15 @@
             align-items: center;
             flex-direction: column;
             width: calc(100% / 7);
-            height: 60px;
-            padding: 6px 0;
+            padding: 8px 0;
+            cursor: pointer;
 
             .nep {
-                width: 100%;
-                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 36px;
+                height: 36px;
                 font-size: 26px;
                 color: #303030;
             }
@@ -47,6 +51,37 @@
                 font-size: 14px;
                 margin-right: 20%;
                 color: #404040;
+            }
+
+            .tithi {
+                font-size: 12px;
+                color: #606060;
+            }
+
+            &.holiday {
+
+                .nep {
+                    color: rgb(214, 20, 20);
+                }
+
+                .eng {
+                    color: rgb(214, 20, 20);
+                }
+
+                .tithi {
+                    color: rgb(214, 20, 20, 0.8);
+                }
+            }
+
+            &.today {
+                .nep {
+                    border: 1px solid #00796B;
+                    border-radius: 50%;
+                }
+            }
+
+            &:hover {
+                background-color: #f0f0f0;
             }
         }
     }

@@ -12,6 +12,12 @@ class NepaliDate {
         this.date = date;
     }
 
+    toString() {
+        const month = (this.month + 1).toString().padStart(2, '0');
+        const day = (this.date).toString().padStart(2, '0');
+        return `${this.year}/${month}/${day}`;
+    }
+
     toEnglishDate() {
         const currentYear = this.year - 2000;
         let sum = 0;

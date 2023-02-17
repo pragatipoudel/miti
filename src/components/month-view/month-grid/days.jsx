@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import nepaliDates from '../../../nepali-date/data';
 import NepaliDate from '../../../nepali-date';
-import { translateNumToNepali } from '../../../translator';
+import { getTithi } from '../../../services/tithi';
+import Day from './day';
 
 function Days({ year, month }) {
+    const [tithi, setTithi] = useState({});
+
+    useEffect(() => {
+        getTithi().then((data) => setTithi(data));
+    }, []);
+
     const dates = [];
     const numDays = nepaliDates[year - 2000][month];
     let nepDate = 0;
@@ -26,14 +33,7 @@ function Days({ year, month }) {
             {emptyDays.map((emptyDay) => <div className="empty day" key={emptyDay} />)}
 
             {dates.map((date) => (
-                <div className="day" key={date.nepDate.date}>
-                    <div className="nep">
-                        {translateNumToNepali(date.nepDate.date)}
-                    </div>
-                    <div className="eng">
-                        {date.engDate.getDate()}
-                    </div>
-                </div>
+                <Day key={date.nepDate.date} date={date} tithiMap={tithi} />
             ))}
         </div>
     );
