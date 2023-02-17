@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/miti/static/css/main.247f06cf.css",
+    "main.js": "/miti/static/js/main.0a9bb136.js",
+    "static/js/787.e2c3dd7d.chunk.js": "/miti/static/js/787.e2c3dd7d.chunk.js",
+    "index.html": "/miti/index.html",
+    "main.247f06cf.css.map": "/miti/static/css/main.247f06cf.css.map",
+    "main.0a9bb136.js.map": "/miti/static/js/main.0a9bb136.js.map",
+    "787.e2c3dd7d.chunk.js.map": "/miti/static/js/787.e2c3dd7d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.247f06cf.css",
+    "static/js/main.0a9bb136.js"
+  ]
+}
