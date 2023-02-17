@@ -1,6 +1,14 @@
 import React from 'react';
 
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const days = [
+    'आइत',
+    'सोम',
+    'मगल',
+    'बुध',
+    'बिहि',
+    'शुक्र',
+    'शनि',
+];
 
 function DayHeaders() {
     return (

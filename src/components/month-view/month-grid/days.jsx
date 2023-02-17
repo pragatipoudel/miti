@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import nepaliDates from '../../../nepali-date/data';
 import NepaliDate from '../../../nepali-date';
+import { translateNumToNepali } from '../../../translator';
 
 function Days({ year, month }) {
     const dates = [];
@@ -22,12 +23,16 @@ function Days({ year, month }) {
     const emptyDays = Array(firstDay).fill().map((_, i) => i);
     return (
         <div className="days">
-            {emptyDays.map((i) => <div className="empty day" key={i} />)}
+            {emptyDays.map((emptyDay) => <div className="empty day" key={emptyDay} />)}
 
-            {dates.map((date, i) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <div className="day" key={i}>
-                    {date.nepDate.date}
+            {dates.map((date) => (
+                <div className="day" key={date.nepDate.date}>
+                    <div className="nep">
+                        {translateNumToNepali(date.nepDate.date)}
+                    </div>
+                    <div className="eng">
+                        {date.engDate.getDate()}
+                    </div>
                 </div>
             ))}
         </div>
