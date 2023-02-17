@@ -5,17 +5,12 @@ import NepaliDate from '../../../nepali-date';
 import { getTithi } from '../../../services/tithi';
 import Day from './day';
 
-function Days({ year, month }) {
-    const [tithi, setTithi] = useState({});
-
-    useEffect(() => {
-        getTithi().then((data) => setTithi(data));
-    }, []);
-
+const getDates = (year, month) => {
     const dates = [];
     const numDays = nepaliDates[year - 2000][month];
     let nepDate = 0;
     let engDate = 0;
+
     for (let i = 0; i < numDays; i += 1) {
         nepDate = new NepaliDate(year, month, i + 1);
         engDate = nepDate.toEnglishDate();
@@ -26,6 +21,17 @@ function Days({ year, month }) {
         });
     }
 
+    return dates;
+};
+
+function Days({ year, month }) {
+    const [tithi, setTithi] = useState({});
+
+    useEffect(() => {
+        getTithi().then((data) => setTithi(data));
+    }, []);
+
+    const dates = getDates(year, month);
     const firstDay = dates[0].day;
     const emptyDays = Array(firstDay).fill().map((_, i) => i);
     return (
