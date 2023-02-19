@@ -1,0 +1,88 @@
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    // justify-content: space-between;
+
+    .today {
+        display: flex;
+        flex-direction: column;
+        // height: 105px;
+        background-color: #00796B;
+        color: white;
+
+        margin-left: 16px;
+        margin-bottom: 16px;
+        box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.5);
+        overflow: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+
+        h4 {
+            margin: 0;
+            padding: 10px 0 8px 10px;
+            line-height: 1;
+            font-size: 18px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+            margin-bottom: 6px;
+        }
+
+        .date {
+            padding: 0 10px;
+            font-size: 20px;
+        }
+
+        .tithi {
+            padding: 4px 10px;
+            font-size: 14px;
+        }
+
+        .event {
+            padding: 0 10px;
+            font-size: 14px;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+    }
+
+    .event-list {
+        display: flex;
+        flex-direction: column;
+
+        background-color: white;
+        margin-left: 16px;
+        box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.5);
+        overflow: hidden;
+        border-radius: 8px;
+        padding-bottom: 6px;
+
+        h4 {
+            margin: 0;
+            padding: 10px 0 8px 10px;
+            line-height: 1;
+            font-size: 18px;
+            font-weight: 600;
+            border-bottom: 1px solid #00796B;
+            margin-bottom: 6px;
+            color: #00695C;
+        }
+
+        .event-row {
+            display: flex;
+
+            .date {
+                padding: 2px 6px;
+                font-size: 16px;
+            }
+
+            .event {
+                padding: 2px 6px 2px 0;
+            }
+
+            &.holiday {
+                color: rgb(214, 20, 20);
+            }
+        }
+    }
+}

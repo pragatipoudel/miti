@@ -1,37 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { translateNumToNepali } from '../../../translator';
+import { translateNumToNepali, engMonthNames, nepMonthNames } from '../../../translator';
 import NepaliDate from '../../../nepali-date';
-
-const nepMonthNames = [
-    'वैशाख',
-    'ज्येष्ठ',
-    'आषाढ़',
-    'श्रावण',
-    'भाद्र',
-    'आश्विन',
-    'कार्तिक',
-    'मंसिर',
-    'पौष',
-    'माघ',
-    'फाल्गुण',
-    'चैत्र',
-];
-
-const engMonthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-];
 
 const getEnglishTitle = (nepYear, nepMonth) => {
     const firstDate = new NepaliDate(nepYear, nepMonth, 1).toEnglishDate();

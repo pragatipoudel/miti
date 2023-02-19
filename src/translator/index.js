@@ -13,3 +13,33 @@ export const translateNumToNepali = (englishNum) => {
 
     return nepaliNum;
 };
+
+export const nepMonthNames = [
+    'वैशाख',
+    'ज्येष्ठ',
+    'आषाढ़',
+    'श्रावण',
+    'भाद्र',
+    'आश्विन',
+    'कार्तिक',
+    'मंसिर',
+    'पौष',
+    'माघ',
+    'फाल्गुण',
+    'चैत्र',
+];
+
+export const engMonthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+];

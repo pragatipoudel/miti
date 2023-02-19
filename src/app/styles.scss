@@ -33,4 +33,9 @@
             font-size: 26px;
         }
     }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
 }

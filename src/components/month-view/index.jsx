@@ -9,11 +9,12 @@ function MonthView({
     month,
     setYear,
     setMonth,
+    tithi,
 }) {
     return (
         <div className="month-view">
             <MonthHeader year={year} month={month} setYear={setYear} setMonth={setMonth} />
-            <MonthGrid year={year} month={month} />
+            <MonthGrid year={year} month={month} tithi={tithi} />
         </div>
     );
 }
@@ -23,6 +24,7 @@ MonthView.propTypes = {
     month: PropTypes.number.isRequired,
     setYear: PropTypes.func.isRequired,
     setMonth: PropTypes.func.isRequired,
+    tithi: PropTypes.object.isRequired,
 };
 
 export default MonthView;

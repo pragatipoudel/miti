@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import nepaliDates from '../../../nepali-date/data';
 import NepaliDate from '../../../nepali-date';
-import { getTithi } from '../../../services/tithi';
 import Day from './day';
 
 const getDates = (year, month) => {
@@ -24,13 +23,7 @@ const getDates = (year, month) => {
     return dates;
 };
 
-function Days({ year, month }) {
-    const [tithi, setTithi] = useState({});
-
-    useEffect(() => {
-        getTithi().then((data) => setTithi(data));
-    }, []);
-
+function Days({ year, month, tithi }) {
     const dates = getDates(year, month);
     const firstDay = dates[0].day;
     const emptyDays = Array(firstDay).fill().map((_, i) => i);
@@ -48,6 +41,7 @@ function Days({ year, month }) {
 Days.propTypes = {
     month: PropTypes.number.isRequired,
     year: PropTypes.number.isRequired,
+    tithi: PropTypes.object.isRequired,
 };
 
 export default Days;
