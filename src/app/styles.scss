@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #E0F2F1;
+    overflow-y: auto;
 
     header {
         display: flex;
@@ -37,5 +38,35 @@
     .container {
         display: flex;
         flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .app {
+        .container {
+            flex-direction: column;
+            margin: 0 16px 16px 16px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .app {
+        header {
+            margin-top: 32px;
+            h1 {
+                font-size: 20px;
+            }
+            span {
+                font-size: 18px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+        }
+        .container {
+            margin: 0 8px 8px 8px;
+        }
     }
 }

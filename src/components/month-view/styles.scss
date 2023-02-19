@@ -10,3 +10,12 @@
     border-radius: 8px;
     align-self: flex-start;
 }
+
+
+@media screen and (max-width: 850px) {
+    .month-view {
+        width: auto;
+        max-width: initial;
+        min-width: initial;
+    }
+}

@@ -86,3 +86,30 @@
         }
     }
 }
+
+
+@media screen and (max-width: 450px) {
+    .month-grid {
+        .day-headers {
+            .day-header {
+                font-size: 16px;
+                height: 24px;
+            }
+        }
+
+        .days {
+            .day {
+                padding: 4px 0;
+                .nep {
+                    font-size: 20px;
+                }
+                .eng {
+                    font-size: 12px;
+                }
+                .tithi {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
